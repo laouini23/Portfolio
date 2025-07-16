@@ -1,0 +1,732 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Moo+Lah+Lah&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+                            @import url('https://fonts.cdnfonts.com/css/poppins');
+@font-face { font-family: "Romande ADF Script Std Italic";
+src: url("https://db.onlinewebfonts.com/t/e0bb26fa85175de40da1b6c46fddc0aa.eot");
+ src: url("https://db.onlinewebfonts.com/t/e0bb26fa85175de40da1b6c46fddc0aa.eot?#iefix")format("embedded-opentype"),
+url("https://db.onlinewebfonts.com/t/e0bb26fa85175de40da1b6c46fddc0aa.woff2")format("woff2"), url("https://db.onlinewebfonts.com/t/e0bb26fa85175de40da1b6c46fddc0aa.woff")format("woff"),
+ url("https://db.onlinewebfonts.com/t/e0bb26fa85175de40da1b6c46fddc0aa.ttf")format("truetype"),
+ url("https://db.onlinewebfonts.com/t/e0bb26fa85175de40da1b6c46fddc0aa.svg#Romande ADF Script Std Italic")format("svg");
+                            }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Romande ADF Script Std Italic";
+    font-size: 18px;
+    background-color: #3b2d1500; 
+    
+}
+ body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      cursor: none; /* Hide the default cursor */
+    }
+
+    /* Custom Cursor */
+    #wand-cursor {
+      position: fixed;
+      top: -52;
+      left: -50;
+      width: 140px; /* Cursor size */
+      height: 120px; /* Cursor size */
+      pointer-events: none; /* Don't let the cursor block clicks */
+      z-index:9999; /* Ensure it stays on top */
+      background: url('white\ wand.png') no-repeat center center; /* Only the moving image */
+      background-size: contain; /* Ensure image fits inside the cursor */
+    }
+
+    /* Make sure clickable elements hide default cursor */
+    a, button, input, textarea, select {
+      cursor: none !important; /* Hide default cursor */
+    }
+
+    /* Scrollbar customization */
+    html::-webkit-scrollbar {
+      background-color: #232707;
+      width: 10px;
+    }
+
+    html::-webkit-scrollbar-thumb {
+      background: rgb(85, 104, 16);
+      border-radius: 10px;
+      box-shadow: #95aa13;
+    }
+
+/* Navbar */
+#navbar {
+    background: #3b2d1500;
+    background-attachment: fixed;
+}
+
+
+.text-area {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
+	text-transform: uppercase;
+	font-size: 50px;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 2px #fff;
+}
+.wrapper {
+    position: fixed; /* Ensures it stays on top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Higher than other elements */
+    pointer-events: none; /* Ensures it doesn’t interfere with clicks */
+}
+
+.round {
+    position: absolute;
+    width: 10px;  /* Small size */
+    height: 10px; /* Small size */
+    border-radius: 50%; /* Ensures it's a perfect circle */
+    background: linear-gradient(to right, #b27544, #ffcefd);   
+    opacity: 0.8; /* Slight opacity for the glow effect */
+    box-shadow: 0 0 5px #e6dc1b, 0 0 10px #EE9C29, 0 0 15px #eed029, 
+                0 0 20px #ebfb09, 0 0 30px #e4dd02, 0 0 40px #e4dd02;
+    animation: animate 4s linear infinite, ani-2 2s linear infinite, glow 1.5s ease-in-out infinite alternate;
+}
+
+.round:nth-child(1) {
+    left: 5%;
+    animation-delay: 0.5s;
+}
+.round:nth-child(2) {
+    left: 65%;
+    animation-delay: 1s;
+}
+.round:nth-child(3) {
+    left: 90%;
+    animation-delay: 1.5s;
+}
+.round:nth-child(4) {
+    left: 18%;
+    animation-delay: 2s;
+}
+.round:nth-child(5) {
+    left: 93%;
+    animation-delay: 2.5s;
+}
+.round:nth-child(6) {
+    left: 52%;
+    animation-delay: 3s;
+}
+.round:nth-child(7) {
+    left: 65%;
+    animation-delay: 3.5s;
+}
+.round:nth-child(8) {
+    left: 35%;
+    animation-delay: 4s;
+}
+.round:nth-child(9) {
+    left: 85%;
+    animation-delay: 4.5s;
+}
+.round:nth-child(10) {
+    left: 45%;
+    animation-delay: 5s;
+}
+.round:nth-child(11) {
+    left: 36%;
+    animation-delay: 5.5s;
+}
+.round:nth-child(12) {
+    left: 72%;
+    animation-delay: 6s;
+}
+.round:nth-child(13) {
+    left: 14%;
+    animation-delay: 6.5s;
+}
+.round:nth-child(14) {
+    left: 70%;
+    animation-delay: 7s;
+}
+@keyframes animate {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+    20% {
+        top: 20%;
+        opacity: 0.8;
+    }
+    40% {
+        top: 40%;
+        opacity: 0.6;
+    }
+    60% {
+        top: 60%;
+        opacity: 0.4;
+    }
+    80% {
+        top: 80%;
+        opacity: 0.2;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+@keyframes ani-2 {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2.5);
+    }
+}
+.hide-rounds {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* navbar end */
+
+
+/* Home section start */
+
+
+
+
+
+
+
+#Home {
+    background-color: #121403;
+    width: 100%;
+    height: 100vh; /* Ensures it takes up the full viewport height */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    margin-bottom: 0; /* Removes unnecessary bottom margin */
+    padding: 0; /* Removes any extra padding */
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding/margins don’t affect width/height */
+}
+#under-door-image-2 {
+    position: absolute;
+    top: -1%; /* Adjust this to place the door image where you want */
+    left: 50%;
+    height: 850px;
+    transform: translateX(-50%); /* Center it horizontally */
+    width: 100%; /* Adjust size of the door image */
+    z-index: 2; /* Make sure it's on top */
+}
+#wonderland-text {
+    width: 100%;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(247, 185, 134);
+    font-size: 90px; /* slightly smaller to fit better */
+    font-weight: bold;
+    animation: glow 3s infinite alternate; /* Smooth 3s breathing glow */
+    font-family: 'Cinzel', serif; /* Optional: medieval fairy tale feeling */
+    z-index: 3;
+}
+@keyframes glow {
+    0% {
+        text-shadow: 
+            0 0 8px #cce693,
+            0 0 15px #fd8989,
+            0 0 20px #e4ba7b;
+    }
+    50% {
+        text-shadow: 
+            0 0 12px #f5db69,
+            0 0 18px #e9c557,
+            0 0 25px #e6b82f;
+    }
+    100% {
+        text-shadow: 
+            0 0 8px #da8a68,
+            0 0 15px #b5a66e,
+            0 0 20px #faab6b;
+    }
+}
+
+
+
+
+
+#TEXT{
+    text-align: center; /* Center the text horizontally */
+    width: 100%; /* Ensure full width */
+    position: relative; /* Position the element relative to its container */
+    top: 50px;
+    font-size: 100px;
+    font-weight: bold;
+    color: #462b10; /* Gold Yellow */
+    animation: glow 2s infinite alternate;
+}
+/* RESPONSIVE DESIGN */
+
+/* Tablets - from 1024px to 820px */
+@media (max-width: 1024px) and (min-width: 820px) {
+    #wonderland-text {
+        font-size: 4vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: -30px;
+    }
+
+    #TEXT {
+        font-size: 8vw; /* Adjust text size */
+    }
+
+    #under-door-image-2 {
+        height: 600px;
+    }
+
+    #Home {
+        height: auto;
+        margin-bottom: 400px; /* Add space between the section and the cards */
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    #wonderland-text {
+        font-size: 4vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: -30px;
+        
+    }
+
+    #TEXT {
+        font-size: 10vw; /* Adjust text size */
+    }
+
+    #under-door-image-2 {
+        height: 400px;
+    }
+
+    #Home {
+        height: auto;
+        margin-bottom: 200px; /* Add space between the section and the cards */
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+     #wonderland-text h1 {
+        font-size: 4vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: 15px;
+       
+    }
+
+    #TEXT {
+        font-size: 12vw; /* Smaller text size */
+    }
+
+    #under-door-image-2 {
+        height: 300px;
+    }
+
+    #Home {
+        height: auto;
+        margin-bottom: 130px; /* Add space between the section and the cards */
+    }
+}
+
+
+#play-music {
+    position: absolute;
+    top: 50px;
+    left: 40px; /* Adjusted to keep it visible */
+    background: none; /* No background */
+    border: none; /* Remove default border */
+    font-size: 16px;
+    color: #d5995d; /* Gold-like text */
+    text-decoration: none; /* Remove underline */
+    text-shadow: 0 0 10px rgba(176, 128, 45, 0.8), 
+                 0 0 20px rgba(255, 215, 0, 0.6), 
+                 0 0 30px rgba(255, 204, 0, 0.4); /* Glow effect */
+    transition: text-shadow 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+#play-music:hover {
+    color: rgb(173, 148, 33);
+    text-shadow: 0 0 15px rgba(255, 215, 0, 1), 
+                 0 0 25px rgba(255, 204, 0, 0.8), 
+                 0 0 35px rgba(255, 204, 0, 0.6); /* Stronger glow */
+}
+
+#play-music:focus {
+    outline: none; /* Prevents focus outline */
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    #play-music {
+        font-size: 2vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: -10px;
+        left: -410px; /* Adjusted to keep it visible */
+    }
+}
+@media (max-width: 853px) {
+    #play-music {
+        font-size: 2vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: -10px;
+        left: -300px; /* Adjusted to keep it visible */
+    }
+}
+@media (max-width: 820px) {
+    #play-music {
+        font-size: 2vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: -10px;
+        left: -350px; /* Adjusted to keep it visible */
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    #play-music {
+        font-size: 2vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: -10px;
+        left: -340px; /* Adjusted to keep it visible */
+    }
+}
+@media (max-width: 540px) {
+    #play-music {
+        font-size: 2vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: -10px;
+        left: -230px; /* Adjusted to keep it visible */
+    }
+}
+/* Small Phones */
+@media (max-width: 480px) {
+    #play-music {
+        font-size: 2vw; /* Responsive font size based on viewport width */
+        position:relative; /* Position the element relative to its container */
+        top: -10px;
+        left: -150px; /* Adjusted to keep it visible */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Global Styling */
+body {
+    background-color: #121403; /* Keeps the dark background */
+}
+
+#about, #services, #part3 {
+    text-align: center;
+    font-size: 30px;
+    padding: 50px 10px;
+    background-color: #121403;
+
+}
+
+/* Heading Styling */
+/* Styling for all h3 inside cards */
+.card h3 {
+    text-align: center;
+    font-size: 50px; /* Default size */
+    font-family: "Romande ADF Script Std Italic", sans-serif;
+    color: #73871e; /* Text color */
+    margin: 10px 0;
+    margin-top: 180px;
+    font-weight: bold;
+    
+    padding: 15px 0; /* Adds space above & below */
+    display: inline-block; /* Keeps border only as wide as text */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Adds smooth transition for scale & glow */
+}
+
+/* Add a subtle floating effect */
+.card h3:hover {
+    transform: translateY(-3px);
+    text-shadow: 
+        0 0 5px #cce693,   /* soft green */
+    0 0 10px #fd8989,  /* soft red-pink */
+    0 0 15px #e4ba7b,  /* warm gold */
+    0 0 20px #f5db69,  /* bright yellow */
+    0 0 25px #da8a68,  /* warm peach-orange */
+    0 0 30px #faab6b;  /* glowing coral */;
+}
+
+/* Card Styling */
+.move-card {
+    background-color: #9ba552;
+    top: 70px;
+    border: 0.5px solid;
+    height: 500px;
+    width: 100%; /* Make it responsive */
+    max-width: 500px; /* Keep it from getting too big */
+    border-radius: 1px;
+    text-align: center;
+    box-shadow:  0 0 6px #f5bd55,
+        0 0 12px #fe968b,
+        0 0 18px #d9b980,
+        0 0 24px #b08f5c; /* Increase shadow for a 3D effect */
+    margin: 20px auto; /* Centers the cards */
+    padding: 20px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Adds smooth transition for scale & glow */
+}
+
+/* Optionally, make the card hover effect more noticeable */
+.move-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow:  0 0 6px #f5bd55,
+        0 0 12px #e9d3ad,
+        0 0 18px #d9b980,
+        0 0 24px #b08f5c; /* Increase shadow for a 3D effect */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .move-card {
+        height: auto; /* Adjust height for small screens */
+        width: 90%; /* Slightly reduce width */
+        max-width: none; /* Allow flexibility */
+        
+    }
+}
+@media (max-width: 480px) {
+    .move-card {
+     
+        height: auto; /* Adjust height for small screens */
+        width: 90%; /* Slightly reduce width */
+        max-width: none; /* Allow flexibility */
+    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Popup styles */
+/* Popup Background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+  
+.popup-content {
+    background-color: #171d05;
+    margin: 3% auto; /* Less margin = more vertical space used */
+    padding: 40px; /* Slightly more padding for spacious content */
+    border-radius: 10px; /* More rounded edges for a soft feel */
+    width: 95%; /* Use almost full screen width */
+    max-width: 1000px; /* Make max width larger */
+    box-shadow: 0 0 50px 20px #cb9823; /* Stronger glow */
+    animation: fadeInScale 0.5s ease-out;
+    font-size: 1.2rem; /* Optional: scale up text */
+}
+
+#popup-service {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  
+   
+}
+  
+#popup-serice .popup-content {
+    background-color: #171d05;
+    margin: 3% auto; /* Smaller margin to maximize size */
+    padding: 40px; /* Extra padding for spacing */
+    border-radius: 10px; /* Smoother edges */
+    width: 90%; /* Increase width */
+    max-width: 730px; /* Larger max width */
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 50px 20px #cb9823; /* More intense glow */
+    animation: fadeInScale 0.5s ease-out;
+}
+
+.popup-about {
+    background-color: #171d05;
+    margin: 3% auto; /* Reduce margin */
+    padding: 40px;
+    border-radius: 10px;
+    width: 80%; /* Make it significantly bigger */
+    max-width: 900px; /* More width */
+    cursor:pointer;
+    box-shadow: 0 0 50px 20px #cb9823;
+    animation: fadeInScale 0.5s ease-out;
+}
+.about img {
+    max-width: 100%; /* Make sure images don't overflow */
+    width: 750px; /* Adjust size */
+    border-radius: 5px; /* Optional rounded corners */
+}
+/* Responsive for devices with a max width of 1024px (tablets) */
+@media (max-width: 1024px) {
+    .popup-content {
+        max-width: 80%; /* Reduce max-width */
+        padding: 15px; /* Adjust padding */
+    }
+    
+}
+
+/* Responsive for mobile devices up to 768px */
+@media (max-width: 768px) {
+    .popup-content {
+        max-width: 80%; /* Further reduce max-width */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Responsive for small phones (up to 540px) */
+@media (max-width: 540px) {
+    .popup-content {
+        max-width:80%; /* Even smaller width for very small screens */
+        padding: 8px; /* Reduce padding for better spacing */
+        font-size: 14px; /* Adjust font size to be readable on smaller screens */
+    }
+}
+
+/* Optional: FadeInScale animation (if you want to keep it) */
+
+
+  @keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+  
+  .close-btn {
+    color: #e1ce20;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    border-radius: 4px;
+    top: 10px;
+    right: 25px;
+    transition: 0.3s;
+    text-shadow: 0 0 5px #e1ce20, 0 0 10px #e1ce20, 0 0 15px #e1ce20;
+}
+
+
+
+/* Animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Animation */
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+/* Glow Effect on Hover */
+.close-btn:hover {
+    text-shadow: 0 0 10px #ffdd00, 0 0 20px #ffcc00, 0 0 30px #ffaa00;
+    transform: scale(1.1);
+}
+  
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+  }
+  .go-to-page-btn {
+    font-size: 40px; /* Makes the text bigger */
+    padding: 15px 40px; /* Increases button size */
+    background-color: #121403; /* Button color */
+    color: #121403; /* Text color */
+    border: none;
+    left: 200px;
+    top: -60px; /* Moves button slightly upward */
+    border-radius: 10px; /* Optional: Rounds corners */
+    transition: all 0.3s ease;
+    color: rgb(255, 177, 164);; /* Text color */
+    
+    /* Glow Effect */
+    text-shadow: 0 0 10px #cca24f, 0 0 20px #ffd700, 0 0 30px #ffcc00;
+}
+
+/* Hover effect */
+.go-to-page-btn:hover {
+    background-color: #2d330c00;
+    transform: scale(1.1); /* Makes button slightly bigger on hover */
+    transition: 0.3s;
+    text-shadow: 0 0 5px #cce693,   /* soft green */
+    0 0 10px #fd8989,  /* soft red-pink */
+    0 0 15px #e4ba7b,  /* warm gold */
+    0 0 20px #ffaba1,  /* bright yellow */
+    0 0 25px #da8a68,  /* warm peach-orange */
+    0 0 30px #faab6b;  /* glowing coral */;
+}
+
+
+
